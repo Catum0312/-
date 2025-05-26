@@ -1,8 +1,33 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.NewChatApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- 기본 컬러 -->
+        <item name="colorPrimary">#6200EE</item>
+        <item name="colorPrimaryVariant">#3700B3</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="colorControlHighlight">@color/gray_300</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">@color/purple_700</item>
+
+        <!-- 배경 및 텍스트 -->
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="android:textColor">@color/text_main</item>
+
+        <!-- 버튼 커스텀 스타일 (일반 Button만 해당됨) -->
+        <item name="buttonStyle">@style/CustomButton</item>
+        <item name="android:textColorHint">@color/hint_text</item>
+
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <!-- 커스텀 버튼 스타일 -->
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/btn_background</item>
+        <item name="android:textColor">@color/btn_text</item>
     </style>
 
     <style name="Theme.NewChatApp" parent="Base.Theme.NewChatApp" />

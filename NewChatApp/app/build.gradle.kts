@@ -11,11 +11,14 @@ android {
     defaultConfig {
         applicationId = "com.example.newchatapp"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -42,6 +45,21 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        compose = true
+        viewBinding = true
+    }
+
+    android {
+        buildFeatures {
+            compose = true
+        }
+        composeOptions {
+            kotlinCompilerExtensionVersion = "1.5.14"
+        }
+    }
+
 
     packaging {
         resources {
@@ -123,4 +141,28 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    implementation("androidx.core:core-ktx:1.13.0")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.activity:activity:1.8.2")
+    implementation("com.google.android.material:material:1.11.0")
+
+    // Fragment
+    implementation("androidx.fragment:fragment-ktx:1.7.0")
+
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    // ConstraintLayout (필요 시 추가)
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // 테스트용 (옵션, 프로젝트 기본 설정 유지)
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    implementation("androidx.compose.ui:ui:1.5.1")
+    implementation("androidx.compose.material:material:1.5.1")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.1")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.5.1")
 }
