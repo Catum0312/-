@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewChatApp</string>
+    <string name="app_name">Field</string>
     <string name="field_list">필드 목록</string>
     <string name="guide_text">무엇이 궁금한가요?</string>
     <string name="input_hint">질문을 입력하세요</string>

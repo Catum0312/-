@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- ① 상단 우측: 필드 드롭다운 화살표만 -->
+    <ImageButton
+        android:id="@+id/btnFieldDropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_arrow_drop_down"
+        android:background="@null"
+        android:contentDescription="필드 선택"
+        app:tint="@color/btn_icon" />
+
+    <!-- ② 필드 리스트(RecylerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFieldDropdown"
+        android:layout_above="@id/recyclerEasyCommand"
+        android:layout_marginTop="8dp"
+        android:overScrollMode="always"/>
+
+    <!-- ③ EasyCommand 상단바 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEasyCommand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/recyclerCommandEntry"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:background="?attr/colorSurface"
+        android:padding="8dp"
+        android:elevation="2dp"
+        android:overScrollMode="always"/>
+
+    <!-- ④ EasyCommand 하단바 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCommandEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/inputArea"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:background="?attr/colorSurface"
+        android:padding="8dp"
+        android:elevation="2dp"
+        android:overScrollMode="always"/>
+
+    <!-- ⑤ 입력 영역 고정 -->
+    <LinearLayout
+        android:id="@+id/inputArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|bottom">
+
+        <ImageButton
+            android:id="@+id/btnPlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_add"
+            android:contentDescription="@string/plus_button"/>
+
+        <EditText
+            android:id="@+id/editTextInput"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/input_hint"
+            android:inputType="textMultiLine"
+            android:textColor="@color/text_main"
+            android:textColorHint="@color/hint_text"/>
+
+        <ImageButton
+            android:id="@+id/btnVoice"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_mic"
+            android:contentDescription="@string/voice_input"/>
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_send"
+            android:contentDescription="@string/send_message"/>
+    </LinearLayout>
+
+</RelativeLayout>
