@@ -135,7 +135,7 @@ class FieldDetailFragment : Fragment(R.layout.fragment_field_detail) {
                 setOnMenuItemClickListener { menuItem ->
                     Toast.makeText(
                         requireContext(),
-                        "${menuItem.title} 기능은 추후 추가됩니다.",
+                        "${menuItem.title} 기능은 추후 추가됩니다.", // 05-26 이부분 삭제하고 연결 코드 넣으면 될것
                         Toast.LENGTH_SHORT
                     ).show()
                     true

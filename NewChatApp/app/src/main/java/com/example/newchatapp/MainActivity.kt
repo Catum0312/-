@@ -41,8 +41,6 @@ class MainActivity : AppCompatActivity() {
             if (isDarkMode) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
         )
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         textViewContent = findViewById(R.id.textViewContent)
         btnVoice = findViewById(R.id.btnVoice)
